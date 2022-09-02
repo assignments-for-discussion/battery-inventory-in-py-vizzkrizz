@@ -1,18 +1,20 @@
 def count_batteries_by_usage(cycles):
-    dict = {
-    "lowCount": 0,
-    "mediumCount": 0,
-    "highCount": 0
+    #Initializing the count of all batteries to zero in a dictionary.
+    dict_battery={
+        "lowCount":0,
+        "mediumCount":0,
+        "highCount":0
     }
-    
-    for cyc in cycles:
-        if cyc < 400:
-            dict['lowCount'] += 1
-        elif cyc < 919:
-            dict['mediumCount'] += 1
+    #Parsing through cycles[list] to check how many times the battery has been charged.
+    for charged in cycles:                                   
+        if charged >= 0 and charged < 400:
+            dict_battery["lowCount"] += 1      
+        elif charged >= 400 and charged < 920:            #920 is not included in this elif
+            dict_battery["mediumCount"] += 1
         else:
-            dict['highCount'] += 1
-    return dict
+            dict_battery["highCount"] += 1                #920 and more times
+         
+    return dict_battery
     
 def test_bucketing_by_number_of_cycles():
   print("Counting batteries by usage cycles...\n")
