@@ -12,7 +12,7 @@ def count_batteries_by_usage(cycles):
         elif charged >= 400 and charged < 920:            #920 is not included in this elif
             dict_battery["mediumCount"] += 1
         else:
-            dict_battery["highCount"] += 1                #920 and more times
+            dict_battery["highCount"] += 1               
          
     return dict_battery
     
