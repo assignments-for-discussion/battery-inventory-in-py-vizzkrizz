@@ -12,7 +12,6 @@ def count_batteries_by_usage(cycles):
             dict['mediumCount'] += 1
         else:
             dict['highCount'] += 1
-            
     return dict
     
 def test_bucketing_by_number_of_cycles():
